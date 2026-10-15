@@ -4,31 +4,62 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Kore Wellness — Site en maintenance</title>
+<title>Kore — Site en maintenance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Plus+Jakarta+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#f6f3ee; --text:#2b2a28; --muted:#6f6b64; --line:#d9d3c9; }
+  :root {
+    --black:#0D0806; --white:#FFFFFF;
+    --mocca:#BEA8A1; --light-mocca:#D3C4BF; --grey-50:#868483;
+  }
   * { box-sizing:border-box; margin:0; padding:0; }
   html, body { height:100%; }
   body {
-    background:var(--bg); color:var(--text);
-    font-family: Georgia, "Times New Roman", serif;
-    display:flex; align-items:center; justify-content:center;
-    padding:24px; text-align:center;
+    background:var(--black); color:var(--white);
+    font-family:"Plus Jakarta Sans", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    min-height:100vh; display:flex; flex-direction:column;
+    padding:48px 64px; position:relative; overflow:hidden;
   }
-  main { max-width:560px; }
-  .brand { font-size:14px; letter-spacing:.35em; text-transform:uppercase; color:var(--muted); margin-bottom:40px; }
-  h1 { font-weight:normal; font-size:clamp(28px, 6vw, 40px); line-height:1.2; margin-bottom:24px; }
-  p { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size:17px; line-height:1.6; color:var(--muted); }
-  hr { border:0; border-top:1px solid var(--line); width:60px; margin:32px auto; }
+  .rings { position:absolute; top:-240px; right:-240px; width:800px; height:800px; pointer-events:none; }
+  header svg { height:40px; width:auto; display:block; }
+  main { flex:1; display:flex; flex-direction:column; justify-content:center; max-width:720px; position:relative; z-index:1; padding:64px 0; }
+  .tag { font-size:14px; letter-spacing:.16em; text-transform:uppercase; color:var(--mocca); margin-bottom:24px; }
+  h1 { font-family:"Comfortaa", sans-serif; font-weight:700; letter-spacing:-0.03em;
+       font-size:clamp(40px, 7vw, 72px); line-height:1.1; margin-bottom:32px; text-wrap:balance; }
+  p { font-size:18px; line-height:1.6; color:var(--light-mocca); max-width:560px; }
+  p + p { margin-top:16px; }
+  footer { font-size:14px; color:var(--grey-50); position:relative; z-index:1; }
+  @media (max-width:600px) {
+    body { padding:32px 24px; }
+    header svg { height:32px; }
+    .rings { width:480px; height:480px; top:-160px; right:-200px; }
+    p { font-size:16px; }
+  }
 </style>
 </head>
 <body>
+<svg class="rings" viewBox="0 0 800 800" aria-hidden="true">
+  <g fill="none" stroke="#FFFFFF">
+    <circle cx="400" cy="400" r="24" stroke-opacity=".55"/>
+    <circle cx="400" cy="400" r="48" stroke-opacity=".5"/>
+    <circle cx="400" cy="400" r="88" stroke-opacity=".42"/>
+    <circle cx="400" cy="400" r="136" stroke-opacity=".34"/>
+    <circle cx="400" cy="400" r="192" stroke-opacity=".26"/>
+    <circle cx="400" cy="400" r="256" stroke-opacity=".18"/>
+    <circle cx="400" cy="400" r="328" stroke-opacity=".11"/>
+    <circle cx="400" cy="400" r="396" stroke-opacity=".06"/>
+  </g>
+</svg>
+<header>
+  <svg viewBox="0 0 389 116" role="img" aria-label="Kore"><path fill="#FFFFFF" fill-rule="evenodd" d="M150 0Q154.25 0 154.56 0.25Q154.88 0.5 157.63 0.75Q160.38 1 164.5 2Q168.63 3 173.44 5.13Q178.25 7.25 182.06 9.69Q185.88 12.13 189.75 15.75Q193.63 19.38 195.19 21.25Q196.75 23.13 199.31 27.19Q201.88 31.25 203.88 36Q205.88 40.75 206.94 46.06Q208 51.38 207.94 58.19Q207.88 65 206.88 69.81Q205.88 74.63 204.88 77.5Q203.88 80.38 202.38 83.44Q200.88 86.5 198.44 90.13Q196 93.75 192.06 97.81Q188.13 101.88 182.94 105.38Q177.75 108.88 173.06 110.94Q168.38 113 164.13 114Q159.88 115 157.25 115.19Q154.63 115.38 154.25 115.69Q153.88 116 149.81 116Q145.75 116 145.44 115.75Q145.13 115.5 142.25 115.25Q139.38 115 134.94 113.94Q130.5 112.88 126 110.88Q121.5 108.88 118.31 106.88Q115.13 104.88 112.63 102.88Q110.13 100.88 106.06 96.38Q102 91.88 99.06 87.06Q96.13 82.25 94.13 76.25Q92.13 70.25 91.56 66Q91 61.75 91.13 56.06Q91.25 50.38 91.69 47.81Q92.13 45.25 93.13 41.81Q94.13 38.38 95.13 35.94Q96.13 33.5 97.63 30.81Q99.13 28.13 102.06 24.19Q105 20.25 107.63 17.63Q110.25 15 112.75 13Q115.25 11 119.31 8.56Q123.38 6.13 128.75 4.13Q134.13 2.13 136.75 1.56Q139.38 1 141.94 0.81Q144.5 0.63 145.13 0.31Q145.75 0 150 0ZM335.19 0Q343.75 0 343.94 0.31Q344.13 0.63 346.25 0.88Q348.38 1.13 351.88 2.13Q355.38 3.13 357.75 4.19Q360.13 5.25 363.38 7.19Q366.63 9.13 369.75 11.63Q372.88 14.13 375.94 17.81Q379 21.5 380.44 23.88Q381.88 26.25 383.38 29.44Q384.88 32.63 386.38 37.75Q387.88 42.88 388 44.69Q388.13 46.5 388.56 47.63Q389 48.75 388.88 57.44L388.75 66.13L345.56 66.19Q302.38 66.25 302.13 66.44Q301.88 66.63 302.06 68.19Q302.25 69.75 303.75 73.44Q305.25 77.13 306.25 78.81Q307.25 80.5 309.5 83.13Q311.75 85.75 315.06 88.31Q318.38 90.88 320.38 91.88Q322.38 92.88 325.31 93.81Q328.25 94.75 331.81 95.19Q335.38 95.63 337.5 95.63Q339.63 95.63 342.81 95.25Q346 94.88 350.44 93.38Q354.88 91.88 356.75 90.81Q358.63 89.75 360.44 88.31Q362.25 86.88 364.5 84.44Q366.75 82 368 80Q369.25 78 370 78.06Q370.75 78.13 371.94 78.94Q373.13 79.75 379.44 82.81Q385.75 85.88 386 86.13Q386.25 86.38 386.13 87.06Q386 87.75 383.44 91.81Q380.88 95.88 376.88 99.88Q372.88 103.88 368.19 106.88Q363.5 109.88 358 111.88Q352.5 113.88 349.63 114.44Q346.75 115 343.06 115.25Q339.38 115.5 333.81 115.25Q328.25 115 321.88 113.44Q315.5 111.88 311.38 109.88Q307.25 107.88 302.88 104.81Q298.5 101.75 294.81 97.81Q291.13 93.88 289.69 91.88Q288.25 89.88 286.19 86.19Q284.13 82.5 282.19 76.56Q280.25 70.63 279.75 66.69Q279.25 62.75 279.25 58.94Q279.25 55.13 279.69 50.5Q280.13 45.88 281.69 40.38Q283.25 34.88 285.69 30Q288.13 25.13 291.06 21.19Q294 17.25 296.19 15.13Q298.38 13 300.88 11.06Q303.38 9.13 305.81 7.63Q308.25 6.13 311.56 4.63Q314.88 3.13 318.31 2.13Q321.75 1.13 323.88 0.88Q326 0.63 326.31 0.31Q326.63 0 335.19 0ZM262.81 1Q268.13 1.13 272.75 2.13Q277.38 3.13 279.19 4.06Q281 5 281.06 15.44Q281.13 25.88 280.69 26.19Q280.25 26.5 277.88 25.31Q275.5 24.13 271.19 23.19Q266.88 22.25 263.38 22.31Q259.88 22.38 257.81 22.75Q255.75 23.13 253.38 24.19Q251 25.25 249.19 26.63Q247.38 28 245.81 29.69Q244.25 31.38 242.75 34.38Q241.25 37.38 240.63 40.44Q240 43.5 239.94 78Q239.88 112.5 239.5 112.75Q239.13 113 228.5 112.94Q217.88 112.88 217.63 112.56Q217.38 112.25 217.38 79.06Q217.38 45.88 217.75 41.38Q218.13 36.88 219.13 32.81Q220.13 28.75 221.63 25.25Q223.13 21.75 225.06 18.81Q227 15.88 229.25 13.5Q231.5 11.13 233.38 9.56Q235.25 8 237.69 6.56Q240.13 5.13 242.69 4.06Q245.25 3 249.13 2.13Q253 1.25 255.25 1.06Q257.5 0.88 262.81 1ZM10.81 3Q21.63 3 21.88 3.25Q22.13 3.5 22.13 25.81Q22.13 48.13 22.5 48.5Q22.88 48.88 29.25 48.81Q35.63 48.75 36.94 46.44Q38.25 44.13 39.63 42.5Q41 40.88 57.44 23.19Q73.88 5.5 74.63 4.44Q75.38 3.38 75.81 3.19Q76.25 3 89.06 3Q101.88 3 102.19 3.19L102.5 3.38L101.69 4.63Q100.88 5.88 77.94 30.63Q55 55.38 54.44 56.44Q53.88 57.5 54.06 58.44Q54.25 59.38 76.63 83.88Q99 108.38 100.63 110.25Q102.25 112.13 102.19 112.5L102.13 112.88L88.69 112.88L75.25 112.88L57.25 93.13Q39.25 73.38 37.25 69.94L35.25 66.5L29.06 66.38Q22.88 66.25 22.5 66.75Q22.13 67.25 22.13 89.88Q22.13 112.5 21.88 112.75Q21.63 113 10.81 113L0 113L0 58L0 3L10.81 3ZM328.88 20.56Q325 21.13 323.19 21.69Q321.38 22.25 319.38 23.25Q317.38 24.25 314.38 26.63Q311.38 29 310.31 30.13Q309.25 31.25 307.19 34.56Q305.13 37.88 303.69 42.06Q302.25 46.25 302.25 47.5L302.25 48.75L333.94 48.81Q365.63 48.88 365.94 48.69Q366.25 48.5 366.06 45.88Q365.88 43.25 364.88 40.38Q363.88 37.5 362.38 34.88Q360.88 32.25 358 29.25Q355.13 26.25 352.75 24.75Q350.38 23.25 347.75 22.25Q345.13 21.25 342.69 20.75Q340.25 20.25 336.5 20.13Q332.75 20 328.88 20.56ZM144.81 21.69Q141.38 22.13 138.38 23.13Q135.38 24.13 131.88 26.19Q128.38 28.25 126.13 30.19Q123.88 32.13 121.5 35.06Q119.13 38 117.19 41.88Q115.25 45.75 114.63 48.13Q114 50.5 113.63 54.88Q113.25 59.25 113.75 63Q114.25 66.75 115.19 69.56Q116.13 72.38 118.19 76Q120.25 79.63 122.75 82.38Q125.25 85.13 128.38 87.5Q131.5 89.88 134.69 91.31Q137.88 92.75 140.69 93.38Q143.5 94 147.81 94.19Q152.13 94.38 154.94 94.06Q157.75 93.75 160.81 92.81Q163.88 91.88 166.75 90.31Q169.63 88.75 171.69 87.19Q173.75 85.63 175.31 84.06Q176.88 82.5 178.88 79.75Q180.88 77 182.31 73.81Q183.75 70.63 184.75 66.19Q185.75 61.75 185.81 58.88Q185.88 56 185.31 52.25Q184.75 48.5 183.31 44.69Q181.88 40.88 179.38 37.19Q176.88 33.5 175.31 31.94Q173.75 30.38 170.06 27.81Q166.38 25.25 164 24.19Q161.63 23.13 157.75 22.31Q153.88 21.5 151.06 21.38Q148.25 21.25 144.81 21.69Z"/></svg>
+</header>
 <main>
-  <div class="brand">Kore Wellness</div>
+  <div class="tag">Maintenance en cours</div>
   <h1>Notre site fait peau neuve</h1>
-  <p>Le site est actuellement en maintenance pour évolution.<br>Il sera de nouveau accessible très prochainement.</p>
-  <hr>
+  <p>Le site est actuellement en maintenance pour évolution. Il sera de nouveau accessible très prochainement.</p>
   <p>Merci de votre patience et à très bientôt.</p>
 </main>
+<footer>Kore — ZI du chemin vert, 17780 Soubise</footer>
 </body>
 </html>
